@@ -1,8 +1,9 @@
-```csharp
+
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.MLAPI;
 
-public class Character : NetworkBehaviour
+public class Character : MLAPI
 {
     public float ServerSyncClock { get; set; }
     public int AvatarID { get; set; }
@@ -19,7 +20,7 @@ public class Character : NetworkBehaviour
     public float damage { get; set; }
     public float attackRange { get; set; }
     public float baseDamage { get; set; }
-    
+
     // Constructor
     public Character(int avatarID, string userName, float health, Vector3 position, int styleID)
     {
@@ -48,7 +49,7 @@ public class Character : NetworkBehaviour
 
                 // Get the last 450 ms of movements
                 var movements = GetLastMovements(450);
-                
+
                 // Convert the movements to JSON
                 string json = JsonUtility.ToJson(movements);
 
@@ -67,7 +68,7 @@ public class Character : NetworkBehaviour
 
     // Method to keep port 2024 open for transmitting character information
     [ClientRpc]
-    private void RpcKeepPortOpen()
+    private void KeepPortOpenRpc()
     {
         NetworkManager.singleton.networkPort = 2024;
         NetworkManager.singleton.StartClient();
@@ -75,7 +76,7 @@ public class Character : NetworkBehaviour
 
     // Method to update the character's traits globally
     [ClientRpc]
-    private void RpcUpdateTraits()
+    private void UpdateTraitsRpc()
     {
         // Get the GameController instance
         GameController gameController = GameController.Instance;
@@ -88,7 +89,7 @@ public class Character : NetworkBehaviour
             // Update defeat count
             gameController.UpdateDefeatCount();
         }
-        
+
         // Get the last 450 ms of movements from the GameController
         List<Movement> movements = gameController.GetLastMovements(450);
 
@@ -162,7 +163,7 @@ public class Character : NetworkBehaviour
                 target.ApplyDamage(damage); // damage is a predefined damage value
             }
         }
-        
+
     }
     // Method to generate a random seed based on the global in-game clock
     public int GetRandomSeed()
@@ -276,8 +277,8 @@ public class Character : NetworkBehaviour
                 }
             }
         }
-        
+
     }
 }
-```
+
 

@@ -1,8 +1,8 @@
-```csharp
+
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Scene : NetworkBehaviour
+public class Scene : MLAPI
 {
     private GameController gameController;
     private Map map;
@@ -31,7 +31,7 @@ public class Scene : NetworkBehaviour
             {
                 // If the character is defeated, disable its control
                 DisableCharacterControl();
-                
+
             }
             else
             {
@@ -76,4 +76,4 @@ public class Scene : NetworkBehaviour
         character.StyleID = styleID;
     }
 }
-```
+

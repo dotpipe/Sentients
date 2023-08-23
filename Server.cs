@@ -1,6 +1,6 @@
-```csharp
+
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+using MySql.Database.MySqlConnection;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -39,6 +39,7 @@ public class Server : NetworkManager
     }
 
     // When a client connects
+    [Client]
     public override void OnServerConnect(NetworkConnection conn)
     {
         if (connectedUsers.Count < MAX_CONNECTIONS)
@@ -88,5 +89,5 @@ public class Server : NetworkManager
     }
 
 }
-```
+
 

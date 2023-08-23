@@ -1,4 +1,4 @@
-```csharp
+
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -85,4 +85,4 @@ public class Damage : MonoBehaviour
         }
     }
 }
-```
+

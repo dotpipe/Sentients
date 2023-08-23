@@ -1,9 +1,9 @@
-```csharp
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class GameController : NetworkBehaviour
+public class GameController : MLAPI
 {
     private Server server;
     private List<Character> characters;
@@ -110,4 +110,4 @@ public class GameController : NetworkBehaviour
     }
 
 }
-```
+

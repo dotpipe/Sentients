@@ -1,4 +1,4 @@
-```csharp
+
 using UnityEngine;
 
 public class FightingStyle
@@ -39,5 +39,5 @@ public class FightingStyle
         return this.Range;
     }
 }
-```
+
 

@@ -1,4 +1,4 @@
-```csharp
+
 using UnityEngine;
 
 public class Striking : MonoBehaviour
@@ -60,4 +60,4 @@ public class Striking : MonoBehaviour
         strikeCooldown = 1 / style.Speed;
     }
 }
-```
+

@@ -1,8 +1,8 @@
-```csharp
+
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Avatar : NetworkBehaviour
+public class Avatar : MLAPI
 {
     public int AvatarID { get; set; }
     public string AvatarName { get; set; }
@@ -62,4 +62,4 @@ public class Avatar : NetworkBehaviour
         UpdatePosition();
     }
 }
-```
+

@@ -1,4 +1,4 @@
-```csharp
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,5 +39,5 @@ public class HealthBar : MonoBehaviour
         gameObject.SetActive(true); // Make the health bar visible again
     }
 }
-```
+
 

@@ -1,4 +1,4 @@
-```csharp
+
 using UnityEngine;
 using System.Collections;
 
@@ -64,4 +64,4 @@ public class Meditation : MonoBehaviour
         character.StopMeditating();
     }
 }
-```
+
